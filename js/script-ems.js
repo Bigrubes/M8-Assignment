@@ -101,7 +101,7 @@ function buildGrid() {
     cell5.appendChild(deleteBtn)
    }
     // BIND THE TBODY TO THE EMPLOYEE TABLE
-    empTable.appendChild(tbody)
+    table.appendChild(tbody)
     // UPDATE EMPLOYEE COUNT
     document.getElementById('empCount').innerHTML = `(${employees.length})`
     // STORE THE ARRAY IN STORAGE
