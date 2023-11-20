@@ -56,12 +56,12 @@ table.addEventListener('click', (e) => {
     if(e.target.classList.contains('delete')){
     if (confirm('Are you sure you want to delete this employee?')){     
         // GET THE SELECTED ROWINDEX FOR THE TR (PARENTNODE.PARENTNODE)
-        let rowIndex = table.deleteRow(e.target.closest('tr').rowIndex)
+        let rowIndex = e.target.closest('tr').rowIndex
         // REMOVE EMPLOYEE FROM ARRAY
-    employees.splice(rowIndex -1,1)
+        employees.splice(rowIndex, 1)
         // BUILD THE GRID
         buildGrid()
-    }
+        }
     }
  });
 
@@ -81,6 +81,8 @@ function buildGrid() {
     let cell3 = row.insertCell(2)
     let cell4 = row.insertCell(3)
     let cell5 = row.insertCell(4)
+    let cell6 = row.insertCell(5)
+
 
     // APPEND THE TEXT VALUES AS TEXT NODES WITHIN THE CELLS
     let textId = document.createTextNode(employee.id)
@@ -98,7 +100,7 @@ function buildGrid() {
     deleteBtn.className = 'btn btn-danger btn-sm float-end delete'
     let textDelete = document.createTextNode('X')
     deleteBtn.appendChild(textDelete)
-    cell5.appendChild(deleteBtn)
+    cell6.appendChild(deleteBtn)
    }
     // BIND THE TBODY TO THE EMPLOYEE TABLE
     table.appendChild(tbody)
